@@ -1,0 +1,206 @@
+.container {
+  background-color: #222;
+  padding: 1.5rem;
+}
+.col1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.imgContainer img {
+  width: 10rem;
+  height: auto;
+}
+.upBtn {
+  background-color: inherit;
+  padding: 0.75rem 2rem;
+  border-radius: 1rem;
+  border: 1px solid #fff;
+  & * {
+    color: #fff;
+    font-size: 1rem;
+    text-decoration: none;
+    font-family: "Vazirmatn";
+  }
+
+  & a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+}
+
+.col2 {
+  padding: 0.5rem 0;
+}
+
+.list {
+  color: #fff;
+  font-size: 0.95rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.list .items {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0 0.65rem;
+  border-left: 2px solid #fff;
+}
+
+.list .items:last-child {
+  border: 0;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.sectionTitle {
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: #fff;
+  margin: 1rem 0;
+}
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.links a {
+  color: white;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 5px;
+  transition: 0.3s;
+}
+
+.links a:hover {
+  color: #ff6600;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.socialIcons a {
+  font-size: 24px;
+  color: white;
+  transition: 0.3s;
+}
+
+.socialIcons a:hover {
+  color: #ff6600;
+}
+
+.subscribeForm {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+
+  & * {
+    font-family: "Vazirmatn";
+  }
+}
+
+.subscribeForm input {
+  flex: 1;
+  padding: 1rem;
+  border-radius: 10px;
+  border: none;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.subscribeForm button {
+  background-image: linear-gradient(to right, #fb4208, #ff6a00);
+  border: none;
+  color: white;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.3s;
+  font-size: 0.9rem;
+}
+
+.subscribeForm button:hover {
+  background-color: #e65c00;
+}
+
+.trustBadges {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 2.5rem 0;
+}
+.aboutUs {
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.enamad {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.iconContainer {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.iconContainer img {
+  height: 6.25rem;
+}
+
+.copyright {
+  text-align: center;
+  color: #fff;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+
+/* ریسپانسیو */
+@media (max-width: 920px) {
+  .footerGrid {
+    grid-template-columns: 1fr;
+  }
+  .list {
+    flex-direction: column;
+    align-items: start;
+  }
+  .list .items {
+    padding: 0 0.65rem;
+    border-left: 0;
+  }
+
+  .col3 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    padding: 0 2rem;
+  }
+
+  .socialIcons {
+    justify-content: center;
+  }
+
+  .trustBadges {
+    flex-direction: column;
+    text-align: center;
+  }
+}

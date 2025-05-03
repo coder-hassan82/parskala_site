@@ -1,0 +1,135 @@
+.containerSlider,
+.containerSlider2 {
+  width: 100%;
+  overflow: hidden;
+  padding: 0.5rem 0;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 1fr;
+  gap: 1rem;
+  background-color: #222;
+}
+.containerSlider2 {
+  background-color: #5c5e92;
+  padding: 1rem 0;
+}
+.sideBar {
+  grid-area: 1 / 1 / 2 / 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.title img {
+  width: 60%;
+  height: auto;
+}
+
+.showAllBtn {
+  font-family: "Vazirmatn";
+  border: 1px solid #e2e2e2;
+  background-color: #ffffff;
+  padding: 0.55rem 1.65rem;
+  border-radius: 3rem;
+  font-weight: 600;
+  align-self: center;
+  width: 80%;
+}
+.showAllBtn a {
+  text-decoration: none;
+  color: #232933;
+}
+
+.showAllBtn:hover {
+  transition: all 0.1s ease-in-out;
+  background-color: #cdcdcd;
+  & a {
+    color: #ffffff;
+  }
+}
+.sliderBox {
+  padding: 1rem 0;
+  grid-area: 1 / 3 / 2 / 8;
+}
+
+.nextArrow,
+.prevArrow {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: rgba(255, 255, 255, 0.279) !important;
+  position: absolute !important;
+  z-index: 999;
+
+  &::before {
+    color: rgb(0, 0, 0) !important;
+    font-size: 1.75rem !important;
+    opacity: 1 !important;
+  }
+}
+.nextArrow {
+  border-radius: 50%;
+  top: 50% !important;
+  left: 0.9rem !important;
+  transform: translate(0, -50%) !important;
+}
+
+.prevArrow {
+  border-radius: 50%;
+  top: 50% !important;
+  right: 1rem !important;
+  transform: translate(0, -50%) !important;
+}
+
+@media (max-width: 1150px) {
+  .containerSlider,
+  .containerSlider2 {
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .title img {
+    width: 90%;
+  }
+  .sideBar {
+    grid-area: 1 / 1 / 2 / 4;
+  }
+  .sliderBox {
+    grid-area: 1 / 4 / 2 / 13;
+  }
+}
+
+@media (max-width: 760px) {
+  .containerSlider,
+  .containerSlider2 {
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .title img {
+    width: 80%;
+  }
+  .sideBar {
+    grid-area: 1 / 1 / 2 / 4;
+    padding: 0rem;
+  }
+  .sliderBox {
+    grid-area: 1 / 4 / 2 / 13;
+  }
+  .showAllBtn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 580px) {
+  .containerSlider,
+  .containerSlider2 {
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .title img {
+    width: 80%;
+  }
+  .sideBar {
+    grid-area: 1 / 1 / 2 / 6;
+  }
+  .sliderBox {
+    grid-area: 1 / 6 / 2 / 13;
+  }
+}

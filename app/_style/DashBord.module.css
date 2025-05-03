@@ -1,0 +1,285 @@
+.parent {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: start;
+  grid-template-rows: 1fr;
+  padding: 0;
+}
+
+.div1 {
+  grid-area: 1 / 4 / 2 / 13;
+  background-color: rgb(255, 255, 255);
+  padding: 1rem;
+}
+.div2 {
+  grid-area: 1 / 1 / 2 / 4;
+  background-color: #f0f2f5;
+  padding: 1.5rem 1rem 1.5rem 0;
+}
+
+.userNameTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.userNameTitle svg {
+  font-size: 1.65rem;
+  color: #385086;
+}
+
+.userNameTitle span {
+  color: #385086;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+}
+.navigationItem {
+  text-decoration: none;
+  color: #385086;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  padding: 1rem 0.5rem 1rem 0;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.navigationItem svg {
+  font-size: 1.4rem;
+}
+.active {
+  background-color: #fff;
+  border: 1px solid rgba(107, 106, 106, 0.3);
+  border-left: none;
+}
+
+/* Profile Page */
+.profilePage {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.headerPage {
+  border-bottom: 1px solid #bababa;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.headerPage span {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.forms {
+  background-color: #edeff2;
+  border-radius: 10px;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.feildInputs {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.part1form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.Label {
+  color: #5f6c91;
+  font-size: 0.94rem;
+  font-weight: 500;
+}
+.Input {
+  font-size: 1rem;
+  background-color: inherit;
+  color: #111;
+  font-weight: 600;
+  border: 0;
+  outline: none;
+}
+
+.feildBtn {
+  border: 0;
+  outline: none;
+  color: #5f6c91;
+  font-size: 1.1rem;
+}
+
+.profileLoading {
+  text-align: center;
+  background-color: #edeff2;
+  padding: 1rem;
+  border-radius: 10px;
+}
+.addresContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.addAdress {
+  outline: none;
+  border: 0;
+  font-size: 1.1rem;
+  color: #385086;
+  background-color: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.addresBox {
+  padding: 1.5rem 1.25rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.completAddres {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.completAddres svg {
+  font-size: 1.5rem;
+  color: #385086;
+}
+.completAddres h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+.recipient_info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.partOfInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.partOfInfo svg {
+  font-size: 0.9rem;
+  color: #9c9d9e;
+  opacity: 0.6;
+}
+.partOfInfo span {
+  font-size: 0.9rem;
+}
+
+.btnGroupe {
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+.btnGroupe a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.3rem 0;
+  text-decoration: none;
+  border: 1px solid #d2d2d2;
+  color: #444;
+}
+.btnGroupe a:last-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.btnGroupe a:first-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.btnGroupe a:nth-child(1) {
+  border-left: none;
+}
+.btnGroupe a:nth-child(2) {
+  border-left: none;
+}
+.btnGroupe a:nth-child(3) {
+  border-left: none;
+}
+.btnGroupe a:nth-child(4) {
+  border-left: none;
+}
+
+.activeOrder {
+  background-color: #ff6a00 !important;
+  color: #fff !important;
+}
+.noOreder {
+  padding: 8rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #f0f2f5;
+}
+.orderList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.orderCard {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.orderCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: #aaa;
+}
+
+.orderHeader {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.75rem;
+}
+
+.orderStatus {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.processing {
+  color: #f59e0b; /* زرد */
+  font-weight: bold;
+}
+
+.status {
+  color: #4b5563;
+}
+
+.orderInfo p {
+  margin: 0.4rem 0;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.price {
+  color: #10b981; /* سبز برای قیمت */
+  font-weight: bold;
+}

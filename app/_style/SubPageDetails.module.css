@@ -1,0 +1,57 @@
+.container {
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+}
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header svg {
+  color: #0b38da;
+  font-size: 1.75rem;
+}
+
+.detail {
+  padding: 0.75rem 1rem;
+}
+
+.listDetail {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.itemDetail {
+  display: flex;
+
+  justify-content: space-between;
+  gap: 1rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.nameDetail {
+  background-color: #99999920;
+  width: 24%;
+  padding: 1rem;
+  border-radius: 10px;
+}
+.valueDetail {
+  background-color: #99999920;
+  flex: 1;
+  padding: 1rem;
+  border-radius: 10px;
+}
+.subList {
+  list-style: none;
+}
+.commentContainer {
+  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: 65fr 35fr;
+  align-items: start;
+  gap: 3rem;
+}

@@ -1,0 +1,188 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  width: 35%;
+  position: relative;
+  background: white;
+  padding: 3rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.logo {
+  width: 12rem;
+}
+
+.feild {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: start;
+}
+
+.feild input::-webkit-outer-spin-button,
+.feild input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.form {
+  margin: 0.5rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.formOtp {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.inputBox {
+  position: relative;
+}
+.inputBox .userIcon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: #676a6e;
+}
+.input {
+  width: 100%;
+  outline: none;
+  direction: ltr;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #999;
+}
+
+.btnLogin {
+  font-size: 1rem;
+  padding: 0.75rem;
+  color: #fff;
+  outline: none;
+  background-color: #fc4d06;
+  border: 1px solid #fc4d06;
+  border-radius: 10px;
+  align-self: center;
+  width: 100%;
+}
+.title {
+  font-weight: 600;
+  color: #333;
+  font-size: 1.25rem;
+}
+.descrip {
+  color: #999;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.closeBtn {
+  top: 0;
+  left: 1rem;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  position: absolute;
+  color: #999;
+}
+.footer {
+  color: #676a6e;
+  font-size: 0.8rem;
+  text-align: start;
+  margin-top: 0.25rem;
+}
+
+.p1 {
+  color: blue;
+}
+.p2 {
+  color: #222;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* === ریسپانسیو برای موبایل === */
+@media (max-width: 1200px) {
+  .modal {
+    width: 50%;
+  }
+}
+
+@media (max-width: 976px) {
+  .modal {
+    width: 60%;
+  }
+}
+
+@media (max-width: 700px) {
+  .modal {
+    width: 70%;
+  }
+}
+
+@media (max-width: 550px) {
+  .modal {
+    width: 90%;
+  }
+}
+
+.error {
+  color: rgb(196, 18, 18);
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.25rem;
+  width: 100%;
+}
+.formOtp .error{
+  margin-bottom: 0.5rem;
+}
+.otpContainer {
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  gap: 8px;
+  margin: 1rem 0;
+}
+
+.otpInput {
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+  font-size: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.otpInput:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px 2px rgba(0, 123, 255, 0.5);
+}

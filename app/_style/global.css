@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Vazirmatn";
+}
+html {
+  scroll-behavior: smooth;
+}
+@media (max-width: 900px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 560px) {
+  html {
+    font-size: 13px;
+  }
+}
+@media (max-width: 490px) {
+  html {
+    font-size: 12px;
+  }
+}

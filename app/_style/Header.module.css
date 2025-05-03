@@ -1,0 +1,357 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.25rem;
+}
+
+.secondRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}
+.logo {
+  max-width: 10rem;
+  max-height: 3rem;
+}
+.searchBox {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 0.4rem;
+  -webkit-border-radius: 0.4rem;
+  -moz-border-radius: 0.4rem;
+  -ms-border-radius: 0.4rem;
+  -o-border-radius: 0.4rem;
+  padding: 0 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+.input {
+  font-family: "Vazirmatn";
+  width: 22rem;
+  padding: 0.75rem 0.5rem 0.75rem 1rem;
+  outline: none;
+  border: 0;
+  border-radius: 0.4rem;
+  -webkit-border-radius: 0.4rem;
+  -moz-border-radius: 0.4rem;
+  -ms-border-radius: 0.4rem;
+  -o-border-radius: 0.4rem;
+  font-size: 0.92rem;
+}
+
+.glass {
+  font-size: 1.25rem;
+  color: #333;
+}
+.miniNav {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+.btn {
+  font-family: "Vazirmatn";
+  background-image: linear-gradient(to right, #fb4208, #ff6a00);
+  outline: none;
+  border: 0;
+  border-radius: 0.4rem;
+  -webkit-border-radius: 0.4rem;
+  -moz-border-radius: 0.4rem;
+  -ms-border-radius: 0.4rem;
+  -o-border-radius: 0.4rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.92rem;
+  color: #fff;
+  justify-self: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.userIcon {
+  border: 0;
+  outline: none;
+  background-color: #fff;
+  font-size: 1.35rem;
+  display: flex;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  padding: 10px;
+  box-shadow: 0 4px 14px -3px rgba(0, 0, 0, 0.22);
+  color: #474747;
+}
+
+.shopCartBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.shopCart {
+  width: 2.4rem;
+  color: #474747;
+}
+.counter {
+  background-image: linear-gradient(to right, #fb4208, #ff6a00);
+  position: absolute;
+  top: -0.25rem;
+  right: -0.75rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.82rem;
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+}
+
+.category {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 2px solid #fff;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+.navItem {
+  color: #333;
+  font-weight: 700;
+  font-size: 0.94rem;
+  text-decoration: none;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  position: relative;
+  cursor: pointer;
+}
+
+.category:hover {
+  border-bottom: 2px solid #ff6a00;
+}
+
+.dropdown {
+  position: absolute;
+  top: 2rem;
+  left: -4rem;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.075);
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+.dropdownItem {
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 2px solid #fff;
+  transition: all 0.5s ease-in-out;
+}
+
+.dropdownItem:hover {
+  border-bottom: 2px solid #ff6a00;
+}
+.hamburger {
+  display: none; /* در دسکتاپ مخفی */
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.closeMenu {
+  outline: none;
+  border: 0;
+  background-color: white;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.btnContainer {
+  position: relative;
+}
+.dashBoardContainer {
+  z-index: 9999;
+  position: absolute;
+  top: 3rem;
+  left: 0;
+  background-color: rgb(255, 255, 255);
+  width: 22rem;
+  border-radius: 1rem;
+  padding: 1rem 0;
+  box-shadow: 0 4px 14px -3px rgba(0, 0, 0, 0.3);
+}
+.listDashBoard {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.ItemDashBoard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+.ItemDashBoard:hover {
+  background-color: #f1f1f1;
+}
+.titleItemDashBoard {
+  font-size: 0.95rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.titleItemDashBoard svg {
+  font-size: 1.25rem;
+  color: #666;
+}
+.angleLeft {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.angleLeft svg {
+  color: #555;
+  font-size: 0.75rem;
+}
+/* === ریسپانسیو برای موبایل === */
+@media (max-width: 774px) {
+  .hamburger {
+    display: block;
+  }
+
+  .header {
+    justify-content: start;
+    width: 100%;
+  }
+  .logoContainer {
+    margin: 0 auto;
+  }
+
+  .secondRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .container {
+    padding: 0.5rem 0.75rem;
+  }
+  .section {
+    gap: 0.5rem;
+    flex-direction: column;
+    align-items: start;
+    flex: 1;
+  }
+
+  .miniNav {
+    gap: 1rem;
+  }
+  .searchBox {
+    flex: 1;
+  }
+  .input {
+    flex: 1;
+  }
+
+  .btn {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .shopCart {
+    width: 30px;
+  }
+  .counter {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  /* ناوبری به حالت همبرگر منو */
+  .navigation {
+    width: 50%;
+    position: fixed;
+    top: 0;
+    right: 0rem;
+    z-index: 99999;
+    height: 100vh;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    transition: all 2s;
+    display: none;
+    -webkit-transition: all 2s;
+    -moz-transition: all 2s;
+    -ms-transition: all 2s;
+    -o-transition: all 2s;
+  }
+
+  /* نمایش ناوبری در صورت باز شدن */
+  .navigation.open {
+    display: flex;
+  }
+  .open .dropdown {
+    position: relative;
+    right: 0;
+    top: 0;
+    border: 0;
+    box-shadow: none;
+  }
+}
+@media (max-width: 460px) {
+  .btn {
+    padding: 0.75rem 1rem;
+    font-size: 0.94rem;
+  }
+  .searchBox {
+    width: 18rem;
+  }
+  .shopCart {
+    width: 28px;
+  }
+  .counter {
+    width: 1rem;
+    height: 1rem;
+  }
+}

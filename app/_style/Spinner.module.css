@@ -1,0 +1,55 @@
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.square {
+  width: 75px;
+  aspect-ratio: 1;
+  display: grid;
+  position: relative;
+}
+
+.square:before,
+.square:after {
+  content: "";
+  position: absolute;
+  width: 35px;
+  aspect-ratio: 1;
+  box-shadow: 0 0 0 3px #000000 inset;
+  animation: sc8 2s infinite alternate;
+}
+
+.square:before {
+  top: 0;
+  left: 0;
+  filter: drop-shadow(40px 40px 0 #000000);
+}
+
+.square:after {
+  top: 0;
+  right: 0;
+  filter: drop-shadow(-40px 40px 0 #000000);
+  animation-delay: -1s;
+}
+
+@keyframes sc8 {
+  0%,
+  10% {
+    border-radius: 0;
+  }
+  30%,
+  40% {
+    border-radius: 50% 0;
+  }
+  60%,
+  70% {
+    border-radius: 50%;
+  }
+  90%,
+  100% {
+    border-radius: 0 50%;
+  }
+}
