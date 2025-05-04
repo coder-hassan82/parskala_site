@@ -12,7 +12,6 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
 export default function AddNewAddres({ user, setAddAddres }) {
-  console.log(user);
   const {
     register,
     reset,
@@ -83,9 +82,7 @@ export default function AddNewAddres({ user, setAddAddres }) {
   const onSubmit = async (formData) => {
     const { error } = await submitAddress(formData, user.id);
     if (error) {
-      console.error("❌ خطا در ثبت آدرس:", error.message);
     } else {
-      console.log("✅ آدرس با موفقیت ثبت شد");
       reset(); // اگر از useForm استفاده می‌کنی
       setAddAddres(false);
     }
