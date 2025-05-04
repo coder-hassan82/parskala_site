@@ -61,7 +61,7 @@
 .part3 {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
   gap: 0.2rem;
 }
@@ -79,9 +79,9 @@
 .rating {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   gap: 0.65rem;
-  justify-content: start;
+  justify-content: flex-start;
 }
 .full {
   color: #f1c21b;
@@ -141,14 +141,14 @@
 }
 .ratingSection {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   justify-content: flex-start;
   flex-direction: column;
   gap: 0.5rem;
 }
 .ratingBox {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   justify-content: center;
   flex-direction: column;
 }

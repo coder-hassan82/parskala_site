@@ -3,13 +3,8 @@ const nextConfig = {
   images: {
     domains: ["hlwzkqxingaysobvysci.supabase.co"],
   },
-  // اضافه کردن این تنظیمات جدید
-  experimental: {
-    missingSuspenseWithCSRBailout: false,
-  },
-  // برای صفحاتی که از useSearchParams استفاده می‌کنند
-  skipTrailingSlashRedirect: true,
-  skipMiddlewareUrlNormalize: true,
+  // حذف experimental.missingSuspenseWithCSRBailout
+  // output: 'export', // اگر نیاز به استاتیک اکسپورت دارید
 };
 
 export default nextConfig;

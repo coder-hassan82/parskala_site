@@ -1,3 +1,4 @@
+"use client";
 import style from "@/app/_style/Category.module.css";
 import { faArrowDownShortWide } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
