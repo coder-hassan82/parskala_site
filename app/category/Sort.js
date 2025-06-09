@@ -2,19 +2,17 @@
 import style from "@/app/_style/Category.module.css";
 import { faArrowDownShortWide } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 export default function Sort({ products }) {
   const [selected, setSelected] = useState("newest");
-  const searchParams = useSearchParams();
   const router = useRouter();
-  const pathName = usePathname();
 
   useEffect(() => {
-    const params = new URLSearchParams(searchParams);
+    const params = new URLSearchParams(router.query);
     params.set("orderby", selected);
-    router.replace(`${pathName}?${params.toString()}`);
+    router.replace(`${router.pathname}?${params.toString()}`);
   }, [selected]);
 
   return (

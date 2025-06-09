@@ -3,18 +3,23 @@
 import style from "@/app/_style/Header.module.css";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useRouter, useSearchParams, usePathname } from "next/navigation";
-import { useState } from "react";
+import { useRouter } from "next/router"; // ← درست برای Pages Router
+import { useState, useEffect } from "react";
 
 function SearchBox() {
   const [searchValue, setSearchValue] = useState("");
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
+
+  useEffect(() => {
+    if (router.query.search) {
+      setSearchValue(router.query.search);
+    }
+  }, [router.query.search]);
 
   const handleSearch = (e) => {
     e.preventDefault();
-    const params = new URLSearchParams(searchParams.toString());
+
+    const params = new URLSearchParams(router.query);
 
     if (searchValue.trim()) {
       params.set("search", searchValue.trim());
@@ -24,8 +29,7 @@ function SearchBox() {
 
     params.set("page", "1");
 
-    // همیشه بفرست به مسیر /category با پارامترها
-    router.replace(`/category?${params.toString()}`);
+    router.push(`/category?${params.toString()}`);
   };
 
   return (

@@ -4,8 +4,8 @@ import "@/app/_style/multi.css";
 import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-import MultiRangeSlider, { ChangeResult } from "multi-range-slider-react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import MultiRangeSlider from "multi-range-slider-react";
+import { useRouter } from "next/router";
 
 export default function Filter({ products }) {
   return (
@@ -19,19 +19,18 @@ export default function Filter({ products }) {
 
 function AvailableProduct() {
   const router = useRouter();
-  const pathName = usePathname();
-  const searchParams = useSearchParams();
+  const query = router.query;
 
-  const isChecked = searchParams.get("available") === "true";
+  const isChecked = query.available === "true";
 
   const handleChange = (e) => {
-    const params = new URLSearchParams(searchParams);
+    const params = new URLSearchParams(router.query);
     if (e.target.checked) {
       params.set("available", "true");
     } else {
       params.delete("available");
     }
-    router.replace(`${pathName}?${params.toString()}`);
+    router.replace(`${router.pathname}?${params.toString()}`);
   };
 
   return (
@@ -48,6 +47,9 @@ function AvailableProduct() {
 }
 
 function FilterByPrice({ products }) {
+  const router = useRouter();
+  const query = router.query;
+
   const prices = products.map((product) =>
     product.discount
       ? product.price * ((100 - product.discount) / 100)
@@ -57,23 +59,19 @@ function FilterByPrice({ products }) {
   const absoluteMin = Math.floor(Math.min(...prices));
   const absoluteMax = Math.ceil(Math.max(...prices));
 
-  const searchParams = useSearchParams();
-  const router = useRouter();
-  const pathName = usePathname();
-
   const [minValue, setMinValue] = useState(
-    Number(searchParams.get("price_min")) || absoluteMin
+    Number(query.price_min) || absoluteMin
   );
   const [maxValue, setMaxValue] = useState(
-    Number(searchParams.get("price_max")) || absoluteMax
+    Number(query.price_max) || absoluteMax
   );
   const [isOpen, setIsOpen] = useState(false);
 
   const handleFilter = () => {
-    const params = new URLSearchParams(searchParams);
+    const params = new URLSearchParams(router.query);
     params.set("price_min", minValue.toString());
     params.set("price_max", maxValue.toString());
-    router.replace(`${pathName}?${params.toString()}`);
+    router.replace(`${router.pathname}?${params.toString()}`);
   };
 
   return (
@@ -125,19 +123,18 @@ function FilterByPrice({ products }) {
 }
 
 function FilterCategory({ products }) {
+  const router = useRouter();
+  const query = router.query;
+
   const categories = Array.from(
     new Set(products.map((product) => product.categories?.name).filter(Boolean))
   );
   const [isOpen, setIsOpen] = useState(false);
 
-  const searchParams = useSearchParams();
-  const router = useRouter();
-  const pathName = usePathname();
-
-  const selectedCategories = searchParams.get("category")?.split(",") || [];
+  const selectedCategories = query.category?.split(",") || [];
 
   const toggleCategory = (cat) => {
-    const params = new URLSearchParams(searchParams);
+    const params = new URLSearchParams(router.query);
     let updated = [...selectedCategories];
 
     if (updated.includes(cat)) {
@@ -152,7 +149,7 @@ function FilterCategory({ products }) {
       params.delete("category");
     }
 
-    router.replace(`${pathName}?${params.toString()}`);
+    router.replace(`${router.pathname}?${params.toString()}`);
   };
 
   return (

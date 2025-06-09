@@ -1,26 +1,28 @@
 "use client";
+
 import style from "@/app/_style/Category.module.css";
 import Sort from "./Sort";
 import CategoryItem from "./CategoryItem";
 import Pageination from "./Pageination";
-import { useSearchParams, usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/router"; // ← فقط از useRouter استفاده می‌کنیم
 import { useEffect, useState } from "react";
 
 export default function CategoryList({ products }) {
-  const searchParams = useSearchParams();
   const router = useRouter();
-  const pathName = usePathname();
+  const searchParams = router.query;
+  const pathName = router.pathname;
   const [filteredProducts, setFilteredProducts] = useState(products);
-  const currentPage = parseInt(searchParams.get("page") || "1");
+
+  const currentPage = parseInt(searchParams.page || "1");
   const itemsPerPage = 8;
 
   useEffect(() => {
-    const minPrice = parseInt(searchParams.get("price_min") || "0");
-    const maxPrice = parseInt(searchParams.get("price_max") || "100000000");
-    const available = searchParams.get("available") === "true";
-    const categories = searchParams.get("category")?.split(",") || [];
-    const orderby = searchParams.get("orderby") || "newest";
-    const searchQuery = searchParams.get("search")?.toLowerCase() || "";
+    const minPrice = parseInt(searchParams.price_min || "0");
+    const maxPrice = parseInt(searchParams.price_max || "100000000");
+    const available = searchParams.available === "true";
+    const categories = searchParams.category?.split(",") || [];
+    const orderby = searchParams.orderby || "newest";
+    const searchQuery = searchParams.search?.toLowerCase() || "";
 
     const updatedProducts = products.filter((product) => {
       const finalPrice = product.discount
@@ -49,9 +51,8 @@ export default function CategoryList({ products }) {
 
     const totalPages = Math.ceil(sortedProducts.length / itemsPerPage);
 
-    // اگر صفحه فعلی از تعداد صفحات بیشتر بود، برو به صفحه اول
     if (currentPage > totalPages && totalPages > 0) {
-      const params = new URLSearchParams(searchParams.toString());
+      const params = new URLSearchParams(router.query);
       params.set("page", "1");
       router.replace(`${pathName}?${params.toString()}`);
     }
@@ -66,7 +67,7 @@ export default function CategoryList({ products }) {
   const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
 
   const handlePageChange = (page) => {
-    const params = new URLSearchParams(searchParams.toString());
+    const params = new URLSearchParams(router.query);
     params.set("page", page.toString());
     router.replace(`${pathName}?${params.toString()}`);
   };
